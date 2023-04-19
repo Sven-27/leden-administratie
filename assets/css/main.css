@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarabun&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed&display=swap');
 
 :root {
   /* General variables */
@@ -6,8 +6,8 @@
   --grid-gap: 0px;
 
   /* Main  fonts*/
-  --font-righteous: 'Righteous', cursive;
-  --font-sarabun: 'Sarabun', sans-serif;
+  --font-primary: 'Roboto', sans-serif;
+  --font-secondary: 'Roboto Condensed', sans-serif;
 
   /* Colors */
   --body-background: #fcfcfc;
@@ -15,48 +15,32 @@
   --content-color: #000;
 
   /* Primary colors */
-  --primary-bg-color: #8080d9;
-  --primary-bg-rgb-color: 128, 128, 217;
-  --primary-border-color: #6363a8;
-  --primary-border-rgb-color: 99, 99, 168;
+  --primary-bg-color: #2929ff;
+  --primary-border-color: #16168c;
 
-  --primary-hover-bg-color: #6969b4;
-  --primary-hover-bg-rgb-color: 105, 105, 180;
-  --primary-hover-border-color: #47477c;
-  --primary-hover-border-rgb-color: 71, 71, 124;
+  --primary-hover-bg-color: #0606e6;
+  --primary-hover-border-color: #02027c;
 
   /* Good colors */
-  --good-bg-color: #6ae56a;
-  --good-bg-rgb-color: 106, 229, 106;
-  --good-border-color: #54b354;
-  --good-border-rgb-color: 84, 179, 84;
+  --good-bg-color: #43ff43;
+  --good-border-color: #1eb91e;
 
-  --good-hover-bg-color: #50af50;
-  --good-hover-bg-rgb-color: 80, 175, 80;
-  --good-hover-border-color: #387838;
-  --good-hover-border-rgb-color: 56, 120, 56;
+  --good-hover-bg-color: #1aad1a;
+  --good-hover-border-color: #036a03;
 
   /* Watchout colors */
-  --watchout-bg-color: #ffd700;
-  --watchout-bg-rgb-color: 255, 215, 0;
-  --watchout-border-color: #d1b200;
-  --watchout-border-rgb-color: 209, 178, 0;
+  --watchout-bg-color: #ffcc00;
+  --watchout-border-color: #bda000;
 
-  --watchout-hover-bg-color: #b59a00;
-  --watchout-hover-bg-rgb-color: 181, 154, 0;
-  --watchout-hover-border-color: #a38a00;
-  --watchout-hover-border-rgb-color: 163, 138, 0;
+  --watchout-hover-bg-color: #c7ae1b;
+  --watchout-hover-border-color: #806e0a;
 
   /* Failure colors */
   --failure-bg-color: #de2727;
-  --failure-bg-rgb-color: 222, 39, 39;
   --failure-border-color: #a91d1d;
-  --failure-border-rgb-color: 169, 29, 29;
 
   --failure-hover-bg-color: #871818;
-  --failure-hover-bg-rgb-color: 135, 24, 24;
   --failure-hover-border-color: #5c1010;
-  --failure-hover-border-rgb-color: 92, 16, 16;
 }
 
 /* Global classes fonts */
@@ -66,14 +50,14 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-righteous);
+  font-family: var(--font-primary);
 }
 
 p,
 a,
 th,
 td {
-  font-family: var(--font-sarabun);
+  font-family: var(--font-secondary);
   margin-top: 0;
   margin-bottom: .5rem;
 }
@@ -275,25 +259,25 @@ button:hover {
 
 .message.primary {
   border-color: var(--primary-border-color);
-  background-color: rgba(var(--primary-bg-rgb-color), 0.85);
+  background-color: var(--primary-bg-color);
   color: white;
 }
 
 .message.good {
   border-color: var(--good-border-color);
-  background-color: rgba(var(--good-bg-rgb-color), 0.85);
+  background-color: var(--good-bg-color);
   color: white;
 }
 
 .message.watchout {
   border-color: var(--watchout-border-color);
-  background-color: rgba(var(--watchout-bg-rgb-color), 0.85);
+  background-color: var(--watchout-bg-color);
   color: white;
 }
 
 .message.failure {
   border-color: var(--failure-bg-color);
-  background-color: rgba(var(--failure-bg-rgb-color), 0.85);
+  background-color: var(--failure-bg-color);
   color: white;
 }
 
@@ -383,7 +367,7 @@ form#login {
 
 form#login label {
   display: block;
-  font-family: var(--font-sarabun);
+  font-family: var(--font-secondary);
   font-weight: 300;
   font-size: 14px;
   line-height: 1.5;

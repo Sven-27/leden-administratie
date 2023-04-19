@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&family=Sarabun&display=swap');
+
+:root {
+  /* General variables */
+  --top-bottom-height: 50px;
+  --grid-gap: 0px;
+
+  /* Main  fonts*/
+  --font-righteous: 'Righteous', cursive;
+  --font-sarabun: 'Sarabun', sans-serif;
+
+  /* Colors */
+  --body-background: #fcfcfc;
+  --body-color: #fff;
+  --content-color: #000;
+
+  /* Primary colors */
+  --primary-bg-color: #8080d9;
+  --primary-bg-rgb-color: 128, 128, 217;
+  --primary-border-color: #6363a8;
+  --primary-border-rgb-color: 99, 99, 168;
+
+  --primary-hover-bg-color: #6969b4;
+  --primary-hover-bg-rgb-color: 105, 105, 180;
+  --primary-hover-border-color: #47477c;
+  --primary-hover-border-rgb-color: 71, 71, 124;
+
+  /* Good colors */
+  --good-bg-color: #6ae56a;
+  --good-bg-rgb-color: 106, 229, 106;
+  --good-border-color: #54b354;
+  --good-border-rgb-color: 84, 179, 84;
+
+  --good-hover-bg-color: #50af50;
+  --good-hover-bg-rgb-color: 80, 175, 80;
+  --good-hover-border-color: #387838;
+  --good-hover-border-rgb-color: 56, 120, 56;
+
+  /* Watchout colors */
+  --watchout-bg-color: #ffd700;
+  --watchout-bg-rgb-color: 255, 215, 0;
+  --watchout-border-color: #d1b200;
+  --watchout-border-rgb-color: 209, 178, 0;
+
+  --watchout-hover-bg-color: #b59a00;
+  --watchout-hover-bg-rgb-color: 181, 154, 0;
+  --watchout-hover-border-color: #a38a00;
+  --watchout-hover-border-rgb-color: 163, 138, 0;
+
+  /* Failure colors */
+  --failure-bg-color: #de2727;
+  --failure-bg-rgb-color: 222, 39, 39;
+  --failure-border-color: #a91d1d;
+  --failure-border-rgb-color: 169, 29, 29;
+
+  --failure-hover-bg-color: #871818;
+  --failure-hover-bg-rgb-color: 135, 24, 24;
+  --failure-hover-border-color: #5c1010;
+  --failure-hover-border-rgb-color: 92, 16, 16;
+}
+
+/* Global classes fonts */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-righteous);
+}
+
+p,
+a,
+th,
+td {
+  font-family: var(--font-sarabun);
+  margin-top: 0;
+  margin-bottom: .5rem;
+}
+
+/* Global classes text styling */
+.text-start {
+  text-align: start;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+body {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+  gap: var(--grid-gap);
+  margin: 0;
+  background: var(--body-background);
+  color: var(--body-color);
+}
+
+header {
+  grid-column: 1/13;
+  height: var(--top-bottom-height);
+  background: #212121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1:hover {
+  cursor: default;
+}
+
+header h1::selection {
+  color: none;
+  background: none;
+}
+
+main {
+  grid-column: 1/13;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  gap: 10px;
+  height: calc(100vh - var(--top-bottom-height) * 2 - var(--grid-gap) * 2);
+  min-height: 300px;
+}
+
+main nav {
+  grid-column: 1/1;
+  background: #333333;
+}
+
+main nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+main nav a {
+  text-decoration: none;
+  color: unset;
+  display: block;
+  padding: 1rem;
+  position: relative;
+}
+
+main nav a:hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: red;
+}
+
+main nav a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 5px;
+  background: rgb(216, 0, 0);
+}
+
+main nav i {
+  width: 32px;
+}
+
+main section {
+  grid-column: 2/13;
+  color: var(--content-color);
+  overflow-y: auto;
+  padding: 1rem;
+}
+
+/* Footer */
+footer {
+  background: #212121;
+  grid-column: 1/13;
+  height: var(--top-bottom-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer h5:hover {
+  cursor: default;
+}
+
+footer h5::selection {
+  color: none;
+  background: none;
+}
+
+/* Buttons */
+button {
+  padding: .5rem 1rem;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+
+  transition: all .5s ease;
+}
+
+button.primary {
+  border-color: var(--primary-border-color);
+  background-color: var(--primary-bg-color);
+  color: white;
+}
+
+button.primary:hover {
+  border-color: var(--primary-hover-border-color);
+  background-color: var(--primary-hover-bg-color);
+}
+
+button.good {
+  border-color: var(--good-border-color);
+  background-color: var(--good-bg-color);
+  color: white;
+}
+
+button.good:hover {
+  border-color: var(--good-hover-border-color);
+  background-color: var(--good-hover-bg-color);
+  color: white;
+}
+
+button.watchout {
+  border-color: var(--watchout-border-color);
+  background-color: var(--watchout-bg-color);
+  color: white;
+}
+
+button.watchout:hover {
+  border-color: var(--watchout-hover-border-color);
+  background-color: var(--watchout-hover-bg-color);
+  color: white;
+}
+
+button.failure {
+  border-color: var(--failure-border-color);
+  background-color: var(--failure-bg-color);
+  color: white;
+}
+
+button.failure:hover {
+  border-color: var(--failure-hover-border-color);
+  background-color: var(--failure-hover-bg-color);
+  color: white;
+}
+
+button:hover {
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+/* Messages */
+.message {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+  background-color: rgba(245, 245, 245, 0.85);
+  border-color: whitesmoke;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 10px;
+  padding: .25rem 1rem;
+}
+
+.message.primary {
+  border-color: var(--primary-border-color);
+  background-color: rgba(var(--primary-bg-rgb-color), 0.85);
+  color: white;
+}
+
+.message.good {
+  border-color: var(--good-border-color);
+  background-color: rgba(var(--good-bg-rgb-color), 0.85);
+  color: white;
+}
+
+.message.watchout {
+  border-color: var(--watchout-border-color);
+  background-color: rgba(var(--watchout-bg-rgb-color), 0.85);
+  color: white;
+}
+
+.message.failure {
+  border-color: var(--failure-bg-color);
+  background-color: rgba(var(--failure-bg-rgb-color), 0.85);
+  color: white;
+}
+
+/* Table */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+  border-radius: 10px;
+  margin: 0.5rem 0;
+}
+
+table th {
+  font-weight: bold;
+  text-align: start;
+  background: #333333;
+  color: white;
+}
+
+table thead tr:first-of-type th:first-of-type {
+  border-top-left-radius: 10px;
+}
+
+table thead tr:first-of-type th:last-of-type {
+  border-top-right-radius: 10px;
+}
+
+table tbody tr:last-of-type td:first-of-type {
+  border-bottom-left-radius: 10px;
+}
+
+table tbody tr:last-of-type td:last-of-type {
+  border-bottom-right-radius: 10px;
+}
+
+table th,
+table td {
+  padding: 0.5rem 1rem;
+}
+
+table tbody tr:nth-child(odd) {
+  background: #fff;
+}
+
+table tbody tr:nth-child(even) {
+  background: #f2f2f2;
+}
+
+table tbody tr:hover {
+  background: #ddd;
+}
+
+.error {
+  color: var(--failure-bg-color);
+}
+
+[hidden="true"] {
+  display: none;
+}
+
+[hidden="false"] {
+  display: table-row;
+}
+
+/* CSS login */
+main.login {
+  display: grid;
+  grid-template-columns: auto;
+  gap: 10px;
+}
+
+main.login section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main.login section#login {
+  grid-column: 1/2;
+  background: #333333;
+}
+
+form#login {
+  color: white;
+  width: 20vw;
+}
+
+form#login label {
+  display: block;
+  font-family: var(--font-sarabun);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.5;
+  margin-bottom: 3px;
+}
+
+input {
+  display: block;
+  border: unset;
+  border-radius: 5px;
+  background: linear-gradient(45deg, #f1f1f1, #E8F0FE);
+  border: none !important;
+  box-shadow: none !important;
+  color: #1a1a1a;
+  line-height: 1.33333333;
+  width: 100%;
+  padding: 0.1875rem 0.3125rem;
+  margin: 0 6px 16px 0;
+  min-height: 40px;
+  max-height: none;
+  width: -webkit-fill-available;
+}
+
+label {
+  display: block;
+}

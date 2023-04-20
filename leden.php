@@ -1,6 +1,6 @@
 <?php include './inc/templates/header.php'; ?>
         <section class="text-black">
-            <p>Op deze pagina kunt u verschillende familie leden aanmaken, aanpassen en of verwijderen. Kijk wel goed uit als u iemand verwijderd of aanpast is dit niet omkeerbaar. Daarom vragen wij u ook zeer goed na te denken en na te kijken welke gebruiker u update.</p>
+            <p>Hier kunt u de familieleden bewerken.</p>
 
             <?php if (isset($_GET['action']) && $_GET['action'] === 'add') { ?>
                 <?php $controller->addFamilyMemberForm(); ?>

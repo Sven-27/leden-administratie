@@ -28,3 +28,4 @@ class BookYear {
     return ($price / 100) * $percentage;
   }
 }
+?>
